@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Form from './components/Form'
+import Recipes from './components/Recipes'
 
 function App() {
 
@@ -24,14 +25,7 @@ function App() {
         <h1 className="App-title">Recipe Search</h1>
       </header>
       <Form getRecipe={getRecipe}/>
-      {recipes.map((recipe) => {
-        return (
-          <div key={recipe.recipe_id}>
-            <img src={recipe.image_url} alt={recipe.title} />
-            <p>{recipe.title}</p>
-          </div>
-        )
-      })}
+      <Recipes recipes={recipes} />
     </div>
   );
 }
